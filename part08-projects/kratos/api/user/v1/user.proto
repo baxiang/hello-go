@@ -1,0 +1,139 @@
+syntax = "proto3";
+
+package api.user.v1;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "kratos/api/user/v1;v1";
+
+// 用户服务
+service UserService {
+  // 创建用户
+  rpc CreateUser (CreateUserRequest) returns (User) {
+    option (google.api.http) = {
+      post: "/api/v1/users"
+      body: "*"
+    };
+  }
+  
+  // 获取用户
+  rpc GetUser (GetUserRequest) returns (User) {
+    option (google.api.http) = {
+      get: "/api/v1/users/{id}"
+    };
+  }
+  
+  // 更新用户
+  rpc UpdateUser (UpdateUserRequest) returns (User) {
+    option (google.api.http) = {
+      put: "/api/v1/users/{id}"
+      body: "*"
+    };
+  }
+  
+  // 删除用户
+  rpc DeleteUser (DeleteUserRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/api/v1/users/{id}"
+    };
+  }
+  
+  // 用户列表
+  rpc ListUser (ListUserRequest) returns (ListUserReply) {
+    option (google.api.http) = {
+      get: "/api/v1/users"
+    };
+  }
+  
+  // 登录
+  rpc Login (LoginRequest) returns (LoginReply) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/login"
+      body: "*"
+    };
+  }
+  
+  // 登出
+  rpc Logout (LogoutRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/api/v1/auth/logout"
+      body: "*"
+    };
+  }
+}
+
+// 用户
+message User {
+  int64 id = 1;
+  string username = 2;
+  string email = 3;
+  string phone = 4;
+  string nickname = 5;
+  string avatar = 6;
+  int32 status = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}
+
+// 创建用户请求
+message CreateUserRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+  string phone = 4;
+  string nickname = 5;
+}
+
+// 获取用户请求
+message GetUserRequest {
+  int64 id = 1;
+}
+
+// 更新用户请求
+message UpdateUserRequest {
+  int64 id = 1;
+  string email = 2;
+  string phone = 3;
+  string nickname = 4;
+  string avatar = 5;
+  int32 status = 6;
+}
+
+// 删除用户请求
+message DeleteUserRequest {
+  int64 id = 1;
+}
+
+// 用户列表请求
+message ListUserRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  string keyword = 3;
+}
+
+// 用户列表响应
+message ListUserReply {
+  repeated User users = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+// 登录请求
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+// 登录响应
+message LoginReply {
+  string token = 1;
+  User user = 2;
+}
+
+// 登出请求
+message LogoutRequest {
+  string token = 1;
+}

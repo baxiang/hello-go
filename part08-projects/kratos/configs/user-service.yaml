@@ -1,0 +1,36 @@
+server:
+  http:
+    network: tcp
+    addr: 0.0.0.0:8081
+    timeout: 60
+  grpc:
+    network: tcp
+    addr: 0.0.0.0:50051
+    timeout: 60
+
+database:
+  driver: mysql
+  source: root:root123@tcp(localhost:3306)/ecommerce?charset=utf8mb4&parseTime=True&loc=Local
+  max_open: 25
+  max_idle: 5
+  max_life: 300
+
+nats:
+  url: nats://localhost:4222
+  cluster_id: ""
+  client_id: user-service
+  stream_name: ECOMMERCE
+
+redis:
+  addr: localhost:6379
+  password: ""
+  db: 0
+
+jwt:
+  secret: kratos-secret-key-change-in-production
+  expire_hour: 24
+
+logger:
+  level: info
+  format: json
+  output_path: logs/user-service.log
