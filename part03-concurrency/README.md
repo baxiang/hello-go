@@ -21,7 +21,20 @@
    - 扇入扇出模式
    - Docker 中的 Channel 应用
 
-3. **[同步原语详解](./03-同步原语详解.md)**
+3. **[Select 语句深度解析](./02-1-Select 语句深度解析.md)** ⭐重点
+   - select 执行规则详解
+   - select 与 return/break/continue 配合
+   - for-select 模式详解
+   - 嵌套 select
+   - 常见陷阱与解决方案
+
+4. **[Select 底层原理深度解析](./02-2-Select 底层原理深度解析.md)** ⭐重点
+   - select 执行位置（是否创建新协程？）
+   - select 底层数据结构
+   - 阻塞的本质与等待队列
+   - 性能分析
+
+5. **[同步原语详解](./03-同步原语详解.md)**
    - Mutex/RWMutex
    - WaitGroup
    - Cond 条件变量
