@@ -1173,4 +1173,4 @@ func main() {
 
 ---
 
-[上一章：← Goroutine 深度解析](./01-Goroutine 深度解析与 GMP 模型.md) | [下一章：同步原语详解 →](./03-同步原语详解.md)
+[上一章：← Goroutine 深度解析](./01-Goroutine 深度解析与 GMP 模型.md) | [下一章：同步原语详解 →](./03-同步原语详解.md)# Select 通俗讲解 - 用生活例子理解 select
