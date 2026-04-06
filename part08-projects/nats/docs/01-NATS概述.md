@@ -537,7 +537,7 @@ NATS Server 的典型资源消耗：
 ### Docker 镜像大小
 
 ```
-nats:latest Docker 镜像：约 10-15MB（基于 scratch 或 alpine）
+nats:2.11.10 Docker 镜像：约 10-15MB（基于 scratch 或 alpine）
 vs
 confluentinc/cp-kafka：约 700MB+（基于 JVM 镜像）
 ```

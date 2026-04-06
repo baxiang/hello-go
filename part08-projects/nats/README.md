@@ -41,7 +41,7 @@ docs/08-集群架构 → docs/09-JetStream高可用 → docs/10-监控与可观�
 
 ```bash
 # 使用 Docker
-docker run -d --name nats -p 4222:4222 -p 8222:8222 nats:latest
+docker run -d --name nats -p 4222:4222 -p 8222:8222 nats:2.11.10
 
 # 或使用 Homebrew (macOS)
 brew install nats-server

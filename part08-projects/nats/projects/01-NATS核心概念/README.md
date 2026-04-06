@@ -30,7 +30,7 @@ NATS 是一个轻量级、高性能、云原生的消息系统，由 Apcera 开�
 
 ```bash
 # 使用 Docker 运行
-docker run -d --name nats-server -p 4222:4222 nats:latest
+docker run -d --name nats-server -p 4222:4222 nats:2.11.10
 
 # 使用 Homebrew (macOS)
 brew install nats-server

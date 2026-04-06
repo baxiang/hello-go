@@ -9,7 +9,7 @@ JetStream 是 NATS 2.0 引入的持久化消息系统，提供消息存储和 Ex
 nats-server -js
 
 # 或使用 Docker
-docker run -d -p 4222:4222 -p 8222:8222 nats:latest -js
+docker run -d -p 4222:4222 -p 8222:8222 nats:2.11.10 -js
 ```
 
 ## 2.2 创建 Stream

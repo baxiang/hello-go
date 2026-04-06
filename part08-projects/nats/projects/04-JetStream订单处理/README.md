@@ -708,7 +708,7 @@ retry:
 ### 启动 NATS 服务器
 
 ```bash
-docker run -d --name nats-server -p 4222:4222 -p 8222:8222 nats:latest -js
+docker run -d --name nats-server -p 4222:4222 -p 8222:8222 nats:2.11.10 -js
 ```
 
 ### 启动生产者

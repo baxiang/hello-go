@@ -544,7 +544,7 @@ topics:
 
 ```bash
 # 使用 Docker
-docker run -d --name nats-server -p 4222:4222 nats:latest -js
+docker run -d --name nats-server -p 4222:4222 nats:2.11.10 -js
 
 # 或本地运行
 nats-server -js
