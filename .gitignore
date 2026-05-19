@@ -1,1 +1,9 @@
 docs/superpowers/
+
+# Node.js
+node_modules/
+package-lock.json
+
+# VitePress
+.vitepress/dist/
+.vitepress/cache/
