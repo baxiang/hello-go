@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = "./proto;streamrpc";
+
+package streamrpc;
+
+// 定义流式服务
+service StreamService {
+  // 服务端流：服务端返回多个响应
+  rpc ServerStream (StreamRequest) returns (stream StreamResponse);
+  
+  // 客户端流：客户端发送多个请求
+  rpc ClientStream (stream StreamRequest) returns (StreamResponse);
+  
+  // 双向流：双方同时发送流式数据
+  rpc BidirectionalStream (stream StreamRequest) returns (stream StreamResponse);
+}
+
+message StreamRequest {
+  string data = 1;
+}
+
+message StreamResponse {
+  string result = 1;
+}

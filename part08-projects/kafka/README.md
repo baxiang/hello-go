@@ -1,70 +1,89 @@
 # Kafka 学习笔记
 
-本目录包含完整的 Apache Kafka 学习资料，包括理论文档、实战项目和代码示例。
+本目录包含完整的 Apache Kafka 学习资料，包括理论文档和配套实战项目。每个项目都是完整可运行的代码，可直接编译执行。
 
 ## 目录结构
 
 ```
 kafka/
-├── docs/                    # 理论文档
-│   ├── README.md           # 系列导航和学习路径
+├── docs/                    # 理论文档（按学习顺序）
+│   ├── README.md           # 系列导航
 │   ├── 01-Kafka概述.md
 │   ├── 02-核心概念.md
-│   └── ...
-├── projects/               # 实战项目
-│   ├── 01-入门-HelloWorld/
-│   ├── 02-进阶-消息系统/
-│   └── ...
-├── hands-on/               # 动手练习代码
-└── example/                # 完整示例应用
+│   ├── 03-生产者与消费者.md
+│   ├── 04-分区与副本.md
+│   ├── 05-消费者组.md
+│   ├── 06-数据流处理.md
+│   ├── 07-集群管理.md
+│   ├── 08-性能优化.md
+│   └── 09-可靠性保证.md
+└── projects/               # 实战项目（配套文档）
+    ├── 01-hello-kafka/     # 基础生产者+消费者（对应 01、03）
+    ├── 02-consumer-group/  # 消费者组+分区（对应 02、05）
+    ├── 03-advanced-producer/ # 高级配置+性能优化（对应 04、08、09）
+    └── 04-microservice/    # 微服务实战（对应 06、07）
 ```
 
 ## 学习路径
 
-### 入门路径
-docs/01-Kafka概述 → docs/02-核心概念 → docs/03-生产者与消费者
+| 阶段 | 文档 | 实战项目 | 预计时间 |
+|------|------|----------|----------|
+| 基础 | 01-Kafka概述 → 02-核心概念 | - | 1.5 小时 |
+| 入门 | 03-生产者与消费者 | [01-hello-kafka](./projects/01-hello-kafka/) | 1 小时 |
+| 进阶 | 04-分区与副本 → 05-消费者组 | [02-consumer-group](./projects/02-consumer-group/) | 1.5 小时 |
+| 进阶 | 08-性能优化 → 09-可靠性保证 | [03-advanced-producer](./projects/03-advanced-producer/) | 1 小时 |
+| 生产 | 06-数据流处理 → 07-集群管理 | [04-microservice](./projects/04-microservice/) | 1.5 小时 |
 
-### 进阶路径
-docs/04-分区与副本 → docs/05-消费者组 → docs/06-数据流处理
+## 环境准备
 
-### 实战路径
-完成理论学习后 → projects/01-入门-HelloWorld → projects/02-进阶-消息系统 → ...
+### 启动 Kafka（Docker）
 
-## 本地开发环境
-
-### 启动 Kafka
+每个项目目录下都有 `docker-compose.yml`：
 
 ```bash
-# 使用 Docker Compose（推荐）
+cd projects/01-hello-kafka
 docker-compose up -d
 
-# 或单独启动 Zookeeper 和 Kafka
-docker run -d --name zookeeper \
-  -p 2181:2181 \
-  bitnami/zookeeper:3.9.1
-
-docker run -d --name kafka \
-  -p 9092:9092 \
-  -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \
-  -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 \
-  bitnami/kafka:3.7.0
+# 创建主题（3个分区）
+docker exec -it <kafka-container> kafka-topics.sh \
+  --create --topic hello-topic --partitions 3 --replication-factor 1 \
+  --bootstrap-server localhost:9092
 ```
 
-### 连接地址
+### 安装依赖
 
-- Kafka Broker: localhost:9092
-- Zookeeper: localhost:2181
+```bash
+# 项目已初始化 go.mod，直接获取依赖
+cd projects/01-hello-kafka
+go mod tidy
+```
 
 ## 快速开始
 
-1. 阅读 [docs/README.md](./docs/README.md) 了解完整学习路径
-2. 从 [docs/01-Kafka概述.md](./docs/01-Kafka概述.md) 开始学习
-3. 使用 hands-on/ 目录中的代码进行练习
+以 Hello Kafka 项目为例：
+
+```bash
+cd projects/01-hello-kafka
+
+# 启动 Kafka
+docker-compose up -d
+
+# 启动消费者（先启动，等待消息）
+go run consumer/main.go
+
+# 另开终端运行生产者
+go run producer/main.go
+```
 
 ## 版本信息
 
 | 组件 | 版本 |
 |------|------|
 | Apache Kafka | 3.7.0 |
-| sarama | 1.43.0 |
+| sarama | 1.49.0 |
 | Go | 1.21+ |
+
+## 参考
+
+- [Kafka 官方文档](https://kafka.apache.org/documentation/)
+- [sarama Go 客户端](https://github.com/IBM/sarama)

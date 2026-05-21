@@ -38,8 +38,17 @@
 
 1. 理解 Kafka 核心概念
 2. 按顺序学习理论文档
-3. 完成对应 hands-on 练习
+3. 完成对应 [实战项目](../projects/)
 4. 参考 official 文档：https://kafka.apache.org/documentation/
+
+## 实战项目
+
+| 项目 | 对应文档 | 功能 |
+|------|----------|------|
+| [01-hello-kafka](../projects/01-hello-kafka/) | 01、03 | 基础生产者+消费者 |
+| [02-consumer-group](../projects/02-consumer-group/) | 02、05 | 消费者组+分区分配 |
+| [03-advanced-producer](../projects/03-advanced-producer/) | 04、08、09 | 高级配置+性能优化 |
+| [04-microservice](../projects/04-microservice/) | 06、07 | 订单系统+日志收集 |
 
 ## 相关资源
 
