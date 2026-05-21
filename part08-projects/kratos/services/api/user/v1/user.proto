@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package api.user.v1;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "services/api/user/v1;v1";
+
+// 用户服务
+service UserService {
+  rpc CreateUser (CreateUserRequest) returns (User);
+  rpc GetUser (GetUserRequest) returns (User);
+  rpc UpdateUser (UpdateUserRequest) returns (User);
+  rpc DeleteUser (DeleteUserRequest) returns (google.protobuf.Empty);
+  rpc ListUser (ListUserRequest) returns (ListUserReply);
+  rpc Login (LoginRequest) returns (LoginReply);
+  rpc Logout (LogoutRequest) returns (google.protobuf.Empty);
+  rpc ValidateToken (ValidateTokenRequest) returns (User);
+}
+
+message User {
+  int64 id = 1;
+  string username = 2;
+  string email = 3;
+  string phone = 4;
+  string nickname = 5;
+  string avatar = 6;
+  int32 status = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}
+
+message CreateUserRequest {
+  string username = 1;
+  string password = 2;
+  string email = 3;
+  string phone = 4;
+  string nickname = 5;
+}
+
+message GetUserRequest {
+  int64 id = 1;
+}
+
+message UpdateUserRequest {
+  int64 id = 1;
+  string email = 2;
+  string phone = 3;
+  string nickname = 4;
+  string avatar = 5;
+  int32 status = 6;
+}
+
+message DeleteUserRequest {
+  int64 id = 1;
+}
+
+message ListUserRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  string keyword = 3;
+}
+
+message ListUserReply {
+  repeated User users = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginReply {
+  string token = 1;
+  User user = 2;
+}
+
+message LogoutRequest {
+  string token = 1;
+}
+
+message ValidateTokenRequest {
+  string token = 1;
+}

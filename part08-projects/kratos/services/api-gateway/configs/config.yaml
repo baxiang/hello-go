@@ -1,0 +1,19 @@
+server:
+  http:
+    network: tcp
+    addr: 0.0.0.0:8080
+    timeout: 60
+
+services:
+  user:
+    addr: localhost:50051
+  product:
+    addr: localhost:50052
+  order:
+    addr: localhost:50053
+  payment:
+    addr: localhost:50054
+
+logger:
+  level: info
+  format: json

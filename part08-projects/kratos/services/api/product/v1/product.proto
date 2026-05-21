@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package api.product.v1;
+
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "services/api/product/v1;v1";
+
+// 商品服务
+service ProductService {
+  rpc CreateProduct (CreateProductRequest) returns (Product);
+  rpc GetProduct (GetProductRequest) returns (Product);
+  rpc UpdateProduct (UpdateProductRequest) returns (Product);
+  rpc DeleteProduct (DeleteProductRequest) returns (google.protobuf.Empty);
+  rpc ListProduct (ListProductRequest) returns (ListProductReply);
+  rpc DeductStock (DeductStockRequest) returns (DeductStockReply);
+  rpc RestoreStock (RestoreStockRequest) returns (DeductStockReply);
+}
+
+message Product {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  string category = 4;
+  double price = 5;
+  int32 stock = 6;
+  string image_url = 7;
+  int32 status = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp updated_at = 10;
+}
+
+message CreateProductRequest {
+  string name = 1;
+  string description = 2;
+  string category = 3;
+  double price = 4;
+  int32 stock = 5;
+  string image_url = 6;
+}
+
+message GetProductRequest {
+  int64 id = 1;
+}
+
+message UpdateProductRequest {
+  int64 id = 1;
+  string name = 2;
+  string description = 3;
+  string category = 4;
+  double price = 5;
+  int32 stock = 6;
+  string image_url = 7;
+  int32 status = 8;
+}
+
+message DeleteProductRequest {
+  int64 id = 1;
+}
+
+message ListProductRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  string category = 3;
+  string keyword = 4;
+}
+
+message ListProductReply {
+  repeated Product products = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message DeductStockRequest {
+  int64 product_id = 1;
+  int32 quantity = 2;
+}
+
+message RestoreStockRequest {
+  int64 product_id = 1;
+  int32 quantity = 2;
+}
+
+message DeductStockReply {
+  bool success = 1;
+  string message = 2;
+  int32 remaining_stock = 3;
+}

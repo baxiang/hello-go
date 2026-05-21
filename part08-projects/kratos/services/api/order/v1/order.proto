@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package api.order.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "services/api/order/v1;v1";
+
+// 订单服务
+service OrderService {
+  rpc CreateOrder (CreateOrderRequest) returns (Order);
+  rpc GetOrder (GetOrderRequest) returns (Order);
+  rpc ListOrder (ListOrderRequest) returns (ListOrderReply);
+  rpc CancelOrder (CancelOrderRequest) returns (Order);
+  rpc PayOrder (PayOrderRequest) returns (Order);
+  rpc UpdatePaymentID (UpdatePaymentIDRequest) returns (Order);
+}
+
+message Order {
+  int64 id = 1;
+  string order_no = 2;
+  int64 user_id = 3;
+  double total_amount = 4;
+  string status = 5;
+  int64 payment_id = 6;
+  string remark = 7;
+  repeated OrderItem items = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp updated_at = 10;
+}
+
+message OrderItem {
+  int64 id = 1;
+  int64 order_id = 2;
+  int64 product_id = 3;
+  string product_name = 4;
+  double price = 5;
+  int32 quantity = 6;
+  double subtotal = 7;
+}
+
+message CreateOrderRequest {
+  int64 user_id = 1;
+  repeated CreateOrderItem items = 2;
+  string remark = 3;
+}
+
+message CreateOrderItem {
+  int64 product_id = 1;
+  string product_name = 2;
+  double price = 3;
+  int32 quantity = 4;
+}
+
+message GetOrderRequest {
+  int64 id = 1;
+}
+
+message ListOrderRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+  int64 user_id = 3;
+  string status = 4;
+}
+
+message ListOrderReply {
+  repeated Order orders = 1;
+  int32 total = 2;
+  int32 page = 3;
+  int32 page_size = 4;
+}
+
+message CancelOrderRequest {
+  int64 id = 1;
+  string reason = 2;
+}
+
+message PayOrderRequest {
+  int64 id = 1;
+  string payment_method = 2;
+}
+
+message UpdatePaymentIDRequest {
+  int64 order_id = 1;
+  int64 payment_id = 2;
+}

@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package api.payment.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "services/api/payment/v1;v1";
+
+// 支付服务
+service PaymentService {
+  rpc CreatePayment (CreatePaymentRequest) returns (Payment);
+  rpc GetPayment (GetPaymentRequest) returns (Payment);
+  rpc PaymentCallback (PaymentCallbackRequest) returns (Payment);
+}
+
+message Payment {
+  int64 id = 1;
+  string payment_no = 2;
+  int64 order_id = 3;
+  string order_no = 4;
+  double amount = 5;
+  string method = 6;
+  string status = 7;
+  string transaction_id = 8;
+  google.protobuf.Timestamp paid_at = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}
+
+message CreatePaymentRequest {
+  int64 order_id = 1;
+  string order_no = 2;
+  double amount = 3;
+  string method = 4;
+}
+
+message GetPaymentRequest {
+  int64 id = 1;
+}
+
+message PaymentCallbackRequest {
+  string payment_no = 1;
+  string transaction_id = 2;
+  string status = 3;
+}
