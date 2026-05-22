@@ -19,7 +19,7 @@ export default defineConfig({
       { text: '进阶编程', link: '/02-进阶编程/01-Goroutine与GMP模型' },
       { text: 'Web与工程', link: '/03-Web与工程/01-Web框架详解' },
       { text: '深度进阶', link: '/04-深度进阶/01-内存管理' },
-      { text: '项目实战', link: '/05-实战项目/' },
+      { text: '项目实战', link: '/05-实战项目/README' },
       { text: '云原生', link: '/06-云原生/01-Docker容器化进阶' },
     ],
 
