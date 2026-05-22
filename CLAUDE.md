@@ -12,7 +12,7 @@ This is a **Go language learning documentation repository** (go-learning-roadmap
 01-语言基础/    # Go 基础 + 核心特性：环境、语法、结构体、接口、错误处理、泛型
 02-进阶编程/    # 并发编程 + 标准库：Goroutine、Channel、并发模式、网络、IO、测试
 03-Web与工程/   # Web开发 + 工程实践：框架、中间件、项目结构、CI/CD、监控
-04-高级话题/    # 高级主题 + 性能调优：内存管理、反射、pprof、CPU/内存调优
+04-深度进阶/    # 深度进阶：内存管理、反射、汇编、设计模式、pprof、CPU/内存调优、生产排查
 05-实战项目/    # 项目实战：gRPC、Kafka、Kratos 微服务、etcd、NATS、Redis 等
 06-云原生/      # 云原生：Docker、K8s、Helm、GitOps、ServiceMesh、Serverless
 ```

@@ -26,9 +26,9 @@ export default generateSidebar([
     sortMenusOrderByDescending: false,
   },
   {
-    documentRootPath: '/04-高级话题',
+    documentRootPath: '/04-深度进阶',
     scanStartPath: '',
-    resolvePath: '/04-高级话题/',
+    resolvePath: '/04-深度进阶/',
     useTitleFromFileHeading: true,
     collapsed: true,
     sortMenusOrderByDescending: false,
