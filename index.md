@@ -9,8 +9,8 @@ hero:
       text: 开始学习
       link: /01-basics/01-环境与工具/01-环境搭建与工具链
     - theme: alt
-      text: 并发编程
-      link: /03-concurrency/01-Goroutine与GMP模型
+      text: 学习路线
+      link: /go-learning-roadmap
 
 features:
   - title: 基础语法
