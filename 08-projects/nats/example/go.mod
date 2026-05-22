@@ -1,4 +1,4 @@
-module github.com/baxiang/hello-go/part08-projects/nats/example
+module github.com/baxiang/hello-go/08-projects/nats/example
 
 go 1.24.0
 

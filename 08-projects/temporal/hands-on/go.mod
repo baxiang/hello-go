@@ -1,4 +1,4 @@
-module github.com/baxiang/hello-go/part08-projects/temporal/hands-on
+module github.com/baxiang/hello-go/08-projects/temporal/hands-on
 
 go 1.21
 

@@ -82,7 +82,7 @@ import (
     "go.temporal.io/sdk/client"
     "go.temporal.io/sdk/worker"
     
-    "github.com/baxiang/hello-go/part08-projects/temporal/projects/01-入门-HelloWorld"
+    "github.com/baxiang/hello-go/08-projects/temporal/projects/01-入门-HelloWorld"
 )
 
 func main() {
@@ -121,7 +121,7 @@ import (
     
     "go.temporal.io/sdk/client"
     
-    "github.com/baxiang/hello-go/part08-projects/temporal/projects/01-入门-HelloWorld"
+    "github.com/baxiang/hello-go/08-projects/temporal/projects/01-入门-HelloWorld"
 )
 
 func main() {
@@ -177,7 +177,7 @@ func main() {
 
 1. 初始化模块（在项目根目录）:
    ```bash
-   go mod init github.com/baxiang/hello-go/part08-projects/temporal/projects/01-入门-HelloWorld
+   go mod init github.com/baxiang/hello-go/08-projects/temporal/projects/01-入门-HelloWorld
    go mod tidy
    ```
 

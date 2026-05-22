@@ -105,7 +105,7 @@ README.md                            ✅ OK
 
 ```bash
 # 创建备份
-cd /Users/baxiang/Documents/hello-go/part03-concurrency
+cd /Users/baxiang/Documents/hello-go/03-concurrency
 tar -czf backup.tar.gz *.md
 
 # 执行重命名
