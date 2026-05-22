@@ -22,7 +22,7 @@ export default defineConfig({
       { text: 'Web 开发', link: '/05-web/01-Web框架详解' },
       { text: '工程实践', link: '/06-engineering/01-项目结构' },
       { text: '进阶', link: '/07-advanced/01-内存管理' },
-      { text: '项目实战', link: '/08-projects/01-入门级项目' },
+      { text: '项目实战', link: '/08-projects/kratos/' },
       { text: '云原生', link: '/09-cloud-native/01-Docker容器化进阶' },
       { text: '性能优化', link: '/10-performance/02-pprof工具详解' },
     ],
