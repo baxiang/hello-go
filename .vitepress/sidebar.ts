@@ -39,6 +39,7 @@ export default generateSidebar([
     resolvePath: '/05-实战项目/',
     useTitleFromFileHeading: true,
     collapsed: true,
+    depthLimit: 1,
     sortMenusOrderByDescending: false,
   },
   {
