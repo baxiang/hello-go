@@ -6,19 +6,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **Go language learning documentation repository** (go-learning-roadmap) containing comprehensive Chinese technical guides covering Go basics through cloud-native development.
 
-**Structure**: 10 s, 50+ markdown files organized by topic:
+**Structure**: 6 parts, 50+ markdown files organized by topic:
 
 ```
-01-basics/     # Go 基础：环境、语法、流程控制、数组、Map、函数、指针、时间、字符串
-02-core/       # 核心特性：结构体、接口、错误处理、包管理、泛型
-03-concurrency/# 并发编程：Goroutine、Channel、同步原语、Context、并发模式
-04-stdlib/     # 标准库：常用库、网络、数据库、测试、日志、文件 IO、正则、序列化
-05-web/        # Web 开发：框架、中间件、认证、API 设计、微服务
-06-engineering/# 工程实践：项目结构、代码规范、依赖管理、构建部署、监控
-07-advanced/   # 高级主题：内存管理、反射、汇编、设计模式、性能优化
-08-projects/   # 实战项目：入门、进阶、高级项目、开源贡献
-09-cloudnative/# 云原生：Docker、K8s、Helm、GitOps、ServiceMesh、Serverless
-10-performance/# 性能调优：方法论、CPU/内存/网络/数据库调优
+01-语言基础/    # Go 基础 + 核心特性：环境、语法、结构体、接口、错误处理、泛型
+02-进阶编程/    # 并发编程 + 标准库：Goroutine、Channel、并发模式、网络、IO、测试
+03-Web与工程/   # Web开发 + 工程实践：框架、中间件、项目结构、CI/CD、监控
+04-高级话题/    # 高级主题 + 性能调优：内存管理、反射、pprof、CPU/内存调优
+05-实战项目/    # 项目实战：gRPC、Kafka、Kratos 微服务、etcd、NATS、Redis 等
+06-云原生/      # 云原生：Docker、K8s、Helm、GitOps、ServiceMesh、Serverless
 ```
 
 ## Common Commands

@@ -15,16 +15,12 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '基础语法', link: '/01-basics/01-环境与工具/01-环境搭建与工具链' },
-      { text: '核心特性', link: '/02-core/01-结构体与方法' },
-      { text: '并发编程', link: '/03-concurrency/01-Goroutine与GMP模型' },
-      { text: '标准库', link: '/04-stdlib/01-常用标准库' },
-      { text: 'Web 开发', link: '/05-web/01-Web框架详解' },
-      { text: '工程实践', link: '/06-engineering/01-项目结构' },
-      { text: '进阶', link: '/07-advanced/01-内存管理' },
-      { text: '项目实战', link: '/08-projects/kratos/' },
-      { text: '云原生', link: '/09-cloud-native/01-Docker容器化进阶' },
-      { text: '性能优化', link: '/10-performance/02-pprof工具详解' },
+      { text: '语言基础', link: '/01-语言基础/01-环境与工具/01-环境搭建与工具链' },
+      { text: '进阶编程', link: '/02-进阶编程/01-Goroutine与GMP模型' },
+      { text: 'Web与工程', link: '/03-Web与工程/01-Web框架详解' },
+      { text: '高级话题', link: '/04-高级话题/01-内存管理' },
+      { text: '项目实战', link: '/05-实战项目/kratos/' },
+      { text: '云原生', link: '/06-云原生/01-Docker容器化进阶' },
     ],
 
     sidebar,

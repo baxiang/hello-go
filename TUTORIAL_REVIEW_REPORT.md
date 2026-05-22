@@ -68,7 +68,7 @@ Roadmap规划但不存在，包含：
 
 **问题示例**:
 ```
-03-concurrency/
+02-进阶编程/
 ├── 01-Goroutine 深度解析与 GMP 模型.md  ❌ 中文空格
 ├── 02-1-Select 语句深度解析.md          ❌ 子编号混乱
 ├── 02-2-Select 底层原理深度解析.md
@@ -343,7 +343,7 @@ func processOptimized() {
 
 **章节规划**:
 ```
-09-cloud-native/
+06-云原生/
 ├── 01-Docker容器化基础.md
 ├── 02-Docker进阶实战.md
 ├── 03-Kubernetes基础概念.md
@@ -367,7 +367,7 @@ func processOptimized() {
 
 **章节规划**:
 ```
-10-performance/
+04-高级话题/
 ├── 01-性能分析方法论.md
 ├── 02-pprof工具详解.md
 ├── 03-CPU调优实战.md
