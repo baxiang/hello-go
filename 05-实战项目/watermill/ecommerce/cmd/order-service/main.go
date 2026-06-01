@@ -60,7 +60,7 @@ func main() {
 	// 依赖组装
 	repo := data.NewOrderRepo(db, log)
 	uc := biz.NewOrderUseCase(repo, log)
-	eventHandler := biz.NewOrderEventHandler(uc, log)
+	eventHandler := biz.NewOrderEventHandler(uc, pub, log)
 
 	// Router — 消费外部事件
 	router, err := message.NewRouter(message.RouterConfig{}, watermillLogger)

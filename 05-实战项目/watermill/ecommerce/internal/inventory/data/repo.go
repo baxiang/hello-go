@@ -45,7 +45,10 @@ func (r *inventoryRepo) Deduct(ctx context.Context, productID string, quantity i
 func (r *inventoryRepo) Restore(ctx context.Context, productID string, quantity int32) error {
 	return r.db.WithContext(ctx).Model(&Inventory{}).
 		Where("product_id = ?", productID).
-		UpdateColumn("stock", gorm.Expr("stock + ?", quantity)).Error
+		Updates(map[string]interface{}{
+			"stock":   gorm.Expr("stock + ?", quantity),
+			"version": gorm.Expr("version + 1"),
+		}).Error
 }
 
 func (r *inventoryRepo) FindByProductID(ctx context.Context, productID string) (*biz.Inventory, error) {

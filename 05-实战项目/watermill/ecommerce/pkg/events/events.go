@@ -7,18 +7,18 @@ import (
 	"google.golang.org/protobuf/proto"
 )
 
-// Kafka 主题常量
+// Kafka 主题常量 — 每个事件类型使用独立 topic，避免不同类型消息被同一 handler 误消费
 const (
-	TopicOrderCreated          = "order.events"
-	TopicInventoryReserved     = "inventory.events"
-	TopicInventoryInsufficient = "inventory.events"
-	TopicPaymentRequested      = "payment.events"
-	TopicPaymentCompleted      = "payment.events"
-	TopicPaymentFailed         = "payment.events"
-	TopicOrderConfirmed        = "order.events"
-	TopicOrderCancelled        = "order.events"
-	TopicInventoryRelease      = "inventory.events"
-	TopicNotificationSent      = "notification.events"
+	TopicOrderCreated          = "order.created"
+	TopicInventoryReserved     = "inventory.reserved"
+	TopicInventoryInsufficient = "inventory.insufficient"
+	TopicPaymentRequested      = "payment.requested"
+	TopicPaymentCompleted      = "payment.completed"
+	TopicPaymentFailed         = "payment.failed"
+	TopicOrderConfirmed        = "order.confirmed"
+	TopicOrderCancelled        = "order.cancelled"
+	TopicInventoryRelease      = "inventory.release"
+	TopicNotificationSent      = "notification.sent"
 )
 
 // ProtoMarshaler protobuf 序列化器

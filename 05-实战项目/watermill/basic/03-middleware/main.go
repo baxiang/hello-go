@@ -67,7 +67,9 @@ func main() {
 	<-router.Running()
 
 	msg := message.NewMessage(watermill.NewUUID(), []byte("重要任务"))
-	pubSub.Publish("tasks", msg)
+	if err := pubSub.Publish("tasks", msg); err != nil {
+		log.Fatal(err)
+	}
 	fmt.Println("发布: 重要任务（将重试 2 次后成功）")
 
 	sig := make(chan os.Signal, 1)
