@@ -1,0 +1,8 @@
+server:
+  http_port: 8081
+kafka:
+  brokers:
+    - "localhost:9092"
+  consumer_group: "order-service"
+database:
+  dsn: "root:root123@tcp(localhost:3306)/watermill_ecommerce?charset=utf8mb4&parseTime=True"
