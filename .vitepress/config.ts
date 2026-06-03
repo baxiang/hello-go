@@ -15,12 +15,12 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '首页', link: '/' },
-      { text: '语言基础', link: '/01-语言基础/01-环境与工具/01-环境搭建与工具链' },
-      { text: '进阶编程', link: '/02-进阶编程/01-Goroutine与GMP模型' },
-      { text: 'Web与工程', link: '/03-Web与工程/01-Web框架详解' },
-      { text: '深度进阶', link: '/04-深度进阶/01-内存管理' },
-      { text: '项目实战', link: '/05-实战项目/README' },
-      { text: '云原生', link: '/06-云原生/01-Docker容器化进阶' },
+      { text: '语言基础', link: '/01-basics/01-environment-tools/01-环境搭建与工具链' },
+      { text: '进阶编程', link: '/02-advanced/01-Goroutine与GMP模型' },
+      { text: 'Web与工程', link: '/03-web/01-Web框架详解' },
+      { text: '深度进阶', link: '/04-deep-dive/01-内存管理' },
+      { text: '项目实战', link: '/05-projects/README' },
+      { text: '云原生', link: '/06-cloud-native/01-Docker容器化进阶' },
     ],
 
     sidebar,

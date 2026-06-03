@@ -86,10 +86,10 @@ README.md                            ✅ OK
 
 **nats/**:
 ```
-01-NATS 核心概念与基础.md                      -> 01-NATS核心概念.md
+01-NATS 核心概念与基础.md                      -> 01-nats-core-concepts.md
 02-NATS JetStream 持久化.md                   -> 02-NATS-JetStream持久化.md
 03-入门项目-NATS 消息订阅发布系统.md           -> 03-NATS消息订阅发布实战.md
-04-进阶项目-JetStream 订单处理系统.md         -> 04-JetStream订单处理实战.md
+04-进阶项目-JetStream 订单处理系统.md         -> 04-jetstream-order-processing实战.md
 ```
 
 **temporal/**:
@@ -105,7 +105,7 @@ README.md                            ✅ OK
 
 ```bash
 # 创建备份
-cd /Users/baxiang/Documents/hello-go/02-进阶编程
+cd /Users/baxiang/Documents/hello-go/02-advanced
 tar -czf backup.tar.gz *.md
 
 # 执行重命名

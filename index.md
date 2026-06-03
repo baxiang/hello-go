@@ -7,7 +7,7 @@ hero:
   actions:
     - theme: brand
       text: 开始学习
-      link: /01-语言基础/01-环境与工具/01-环境搭建与工具链
+      link: /01-basics/01-environment-tools/01-环境搭建与工具链
     - theme: alt
       text: 学习路线
       link: /go-learning-roadmap

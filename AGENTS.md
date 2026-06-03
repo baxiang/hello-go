@@ -4,7 +4,7 @@ This file provides guidance to agentic coding agents operating in this Go langua
 
 ## Repository Overview
 
-This is a **Go language learning documentation repository** containing comprehensive Chinese technical guides covering Go basics through cloud-native development. Contains markdown documentation (6 parts, 50+ files) and sample Go code in `05-实战项目/kratos/`.
+This is a **Go language learning documentation repository** containing comprehensive Chinese technical guides covering Go basics through cloud-native development. Contains markdown documentation (6 parts, 50+ files) and sample Go code in `05-projects/kratos/`.
 
 ## Build/Test/Lint Commands
 
@@ -57,9 +57,9 @@ go mod tidy
 go mod verify
 ```
 
-### Sample Project (05-实战项目/kratos)
+### Sample Project (05-projects/kratos)
 ```bash
-cd 05-实战项目/kratos
+cd 05-projects/kratos
 
 # Run tests for kratos project
 go test ./...
@@ -276,7 +276,7 @@ project/
 
 ## Important Notes
 - This repository primarily contains documentation in markdown format
-- Sample Go code is located in `05-实战项目/kratos/`
+- Sample Go code is located in `05-projects/kratos/`
 - Comments in Go code examples are in Chinese
 - Follow Effective Go and Uber Go Style Guide principles
 - Ensure all code examples are syntactically correct and runnable
